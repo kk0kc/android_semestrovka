@@ -1,4 +1,4 @@
-package com.example.feature_second.presentation
+package com.example.history.presentation
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -22,9 +22,9 @@ internal fun HistoryScreen() {
     CenterText(text = "History")
 }
 @Composable
-fun CenterText(text: String) {
+fun CenterText(text: String, modifier: Modifier = Modifier) {
     Column(
-        modifier = Modifier.fillMaxSize(),
+        modifier = modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {

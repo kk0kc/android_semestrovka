@@ -3,6 +3,8 @@ package itis.lisa.semestrovka.core
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.CenterAlignedTopAppBar
@@ -51,7 +53,8 @@ class MainActivity : ComponentActivity() {
                     topBar = { MainTopAppBar() },
                     bottomBar = {
                         BottomAppBar(modifier = Modifier) {
-                            BottomNavigationBar(navController = navController)
+                            BottomNavigationBar(navController = navController, modifier = Modifier
+                                .fillMaxWidth())
                         }
                     }
                 ) {
@@ -95,7 +98,7 @@ private fun MainTopAppBar() {
 }
 
 @Composable
-fun BottomNavigationBar(navController: NavController) {
+fun BottomNavigationBar(navController: NavController, modifier: Modifier = Modifier) {
     val items = listOf(
         NavigationDestination.News,
         NavigationDestination.History,
@@ -111,7 +114,7 @@ fun BottomNavigationBar(navController: NavController) {
         }
     }
 
-    NavigationBar {
+    NavigationBar(modifier) {
         items.forEachIndexed { index, item ->
             NavigationBarItem(
                 alwaysShowLabel = true,

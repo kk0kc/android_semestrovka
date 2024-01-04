@@ -3,6 +3,7 @@ package itis.lisa.semestrovka.core.navigation
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -25,13 +26,13 @@ fun NavigationHost(
         modifier = modifier,
     ) {
         composable(NavigationDestination.History.route) {
-            HistoryScreen()
+            CenterText(text = "History", modifier = Modifier.fillMaxSize())
         }
         composable(NavigationDestination.Profile.route) {
-            ProfileScreen()
+            CenterText(text = "Profile", modifier = Modifier.fillMaxSize())
         }
         composable(NavigationDestination.Settings.route) {
-            SettingsScreen()
+            CenterText(text = "Settings", modifier = Modifier.fillMaxSize())
         }
         factories.forEach {
             it.create(this)
@@ -39,27 +40,10 @@ fun NavigationHost(
     }
 }
 
-
-
 @Composable
-fun HistoryScreen() {
-    CenterText(text = "History")
-}
-
-@Composable
-fun ProfileScreen() {
-    CenterText(text = "Profile")
-}
-@Composable
-fun SettingsScreen() {
-    CenterText(text = "Settings")
-}
-
-
-@Composable
-fun CenterText(text: String) {
+fun CenterText(text: String, modifier: Modifier = Modifier) {
     Column(
-        modifier = Modifier.fillMaxSize(),
+        modifier,
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {

@@ -1,6 +1,6 @@
 @file:Suppress("UnstableApiUsage")
 
-include(":basic-feature:feature_second")
+include(":basic-feature:history")
 
 
 include(":basic-feature:home")

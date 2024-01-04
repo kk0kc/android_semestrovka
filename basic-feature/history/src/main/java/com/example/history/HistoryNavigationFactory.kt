@@ -1,9 +1,7 @@
-package com.example.feature_second
-
+package com.example.history
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
-import com.example.feature_second.presentation.HistoryRoute
-import com.example.feature_second.presentation.HistoryScreen
+import com.example.history.presentation.HistoryScreen
 import itis.lisa.semestrovka.core.navigation.NavigationDestination
 import itis.lisa.semestrovka.core.navigation.NavigationFactory
 import javax.inject.Inject
