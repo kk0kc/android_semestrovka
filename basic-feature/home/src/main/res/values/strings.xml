@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="news_error_fetching">Sorry, something went wrong when fetching news</string>
+    <string name="news_error_refreshing">Sorry, something went wrong when refreshing news</string>
+
+    <string name="news_image_content_description">News image</string>
+</resources>

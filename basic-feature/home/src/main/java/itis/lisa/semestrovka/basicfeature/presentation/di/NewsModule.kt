@@ -1,0 +1,31 @@
+package itis.lisa.semestrovka.basicfeature.presentation.di
+
+import dagger.Binds
+import dagger.Module
+import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ViewModelComponent
+import dagger.hilt.components.SingletonComponent
+import dagger.multibindings.IntoSet
+import itis.lisa.semestrovka.basicfeature.presentation.NewsNavigationFactory
+import itis.lisa.semestrovka.basicfeature.presentation.NewsUiState
+import itis.lisa.semestrovka.core.navigation.NavigationFactory
+import javax.inject.Singleton
+
+@Module
+@InstallIn(ViewModelComponent::class)
+internal object NewsViewModelModule {
+
+    @Provides
+    fun provideInitialNewsUiState(): NewsUiState = NewsUiState()
+}
+
+@Module
+@InstallIn(SingletonComponent::class)
+internal interface NewsSingletonModule {
+
+    @Singleton
+    @Binds
+    @IntoSet
+    fun bindNewsNavigationFactory(factory: NewsNavigationFactory): NavigationFactory
+}

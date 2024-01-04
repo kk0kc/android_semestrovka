@@ -1,0 +1,8 @@
+appId: itis.lisa.semestrovka
+---
+- launchApp
+- assertNotVisible: "Sorry, something went wrong when fetching news"
+- swipe:
+    direction: "DOWN"
+- assertVisible: "News image"
+- assertNotVisible: "Sorry, something went wrong when refreshing news"
