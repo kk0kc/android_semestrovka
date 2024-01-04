@@ -40,7 +40,7 @@ jobs:
       - name: Run unit tests
         uses: gradle/gradle-build-action@v2
         with:
-          arguments: app:testDebugUnitTest basic-feature:testDebugUnitTest --stacktrace
+          arguments: app:testDebugUnitTest basic-feature:home:testDebugUnitTest --stacktrace
 
       - name: Run Compose UI tests
         uses: ReactiveCircus/android-emulator-runner@v2
